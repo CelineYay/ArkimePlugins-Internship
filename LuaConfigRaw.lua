@@ -11,7 +11,7 @@ end]]--
 while true do
 
 	-- Ask user to input
-	print("\n1.Arkime status \n2.Clear &/ upload file \n3.Live Capture \n4.save captured files to dir\n0.Quit\nenter number: ")
+	print("\n1.Arkime status \n2.Clear &/ upload file \n3.Live Capture \n4.Edit Config file\n5.Restart viewer & capture\n0.Quit\nenter number: ")
 	choice = io.read("*n")
 
 	-- status
@@ -49,7 +49,12 @@ while true do
 			os.execute("systemctl stop arkimecapture")
 		else
 			print("Invalid input")
-		end
+		end	
+	elseif choice == 4 then
+		os.execute("sudo nano /opt/arkime/etc/config.ini")
+	elseif choice == 5 then
+		os.execute("systemctl restart arkimeviewer")
+		os.execute("systemctl restart arkimecapture")
 	-- Enter 0 to quit loop
 	elseif choice == 0 then 
 		break
