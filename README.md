@@ -29,11 +29,12 @@ LuaConfigRaw.lua -> simplify Arkime commands
 
 ### WK4: JA4+ Plugin
 1. Download & understand fingerprint JA4+ JA3 Jarm usage
-2. Automate JA4+ plugin setup / mantainence if any
-3. How to filter JA4+ data on Arkime?
-4. Gather possible insights from JA4+
+2. How to filter JA4+ data on Arkime?
+3. Gather possible insights from JA4 & JA3
 
 ### WK5: JA4+ & Arkime
-1. Evaluate JA4+ plugin insights on Arkime
+1. Evaluate JA4S & JA4H plugin insights on Arkime
 2. Visualise the data from fingerprint better?
 3. Performance improvements measurable?
+4. Automate JA4+ plugin setup / mantainence if any
+5. Discuss what to present for brownbag
