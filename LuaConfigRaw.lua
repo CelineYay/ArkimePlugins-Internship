@@ -1,3 +1,4 @@
+-- edit the saved pcap file directory accordingly
 --[[while true do
 	print("Hi: ")
 	name = io.read("*l")
@@ -24,7 +25,7 @@ while true do
 		os.execute("systemctl status arkimecapture")
 		-- os.execute("kill -2 " .. 27842)
 	elseif choice == 2 then
-		print("Enter Pcap file dir:")
+		print("Enter Pcap file (indownloads):")
 		io.read()
 		local file = io.read("*l")
 	
@@ -38,7 +39,8 @@ while true do
 			os.execute("sudo systemctl restart arkimeviewer")
 		else
 		end
-		local configfileCMD = "/opt/arkime/bin/capture -c /opt/arkime/etc/config.ini -r " .. file
+		-- /opt/arkime/bin/capture -c /opt/arkime/etc/config.ini -r /home/celinechan/Downloads/file.pcap
+		local configfileCMD = "/opt/arkime/bin/capture -c /opt/arkime/etc/config.ini -r /home/celinechan/Downloads/"..file
 		os.execute(configfileCMD)
 	elseif choice == 3 then
 		print("Chose Arkime capture 1.ON, 0.OFF: ")
