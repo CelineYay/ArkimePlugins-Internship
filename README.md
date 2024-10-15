@@ -36,5 +36,9 @@ LuaConfigRaw.lua -> simplify Arkime commands
 1. Evaluate JA4S & JA4H plugin insights on Arkime
 2. Visualise the data from fingerprint better?
 3. Performance improvements measurable?
-4. Automate JA4+ plugin setup / mantainence if any
-5. Discuss what to present for brownbag
+
+## WK6: JA4+ & Arkime
+1.  Automate JA4+ plugin setup / mantainence if any
+2.  Discuss what to present for brownbag
+3.  Meet user
+4.  
