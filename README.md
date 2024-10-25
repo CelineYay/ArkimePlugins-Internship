@@ -37,13 +37,19 @@ LuaConfigRaw.lua -> simplify Arkime commands
 2. Visualise the data from fingerprint better?
 3. Performance improvements measurable?
 
-## WK6: JA4+ & Arkime
+### WK6: JA4+ & Arkime
 1.  Automate JA4+ plugin setup / mantainence if any
 2.  Discuss what to present for brownbag
 3.  Meet user
 
-## WK7: JA4 & Arkime
-1. Automate JA4+ plugin setup / mantainence ctn
-2. Brown bag slides
-3. SSHJA4
-4. whitelisting jA4
+### WK7: JA4 & Arkime
+1. plugin setup pattern matching
+2. plugin downloading
+3. Brown bag slides
+4. SSHJA4
+
+### WK8: JA4 & Arkime
+1. Putting together the plugin automation code
+2. SSHJA4
+3. whitelisting jA4
+4. Brown Bag
