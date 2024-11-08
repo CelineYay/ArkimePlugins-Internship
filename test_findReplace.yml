@@ -1,0 +1,45 @@
+name: Test Arkime Plugin Configuration Script
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v3
+
+    - name: Set up Lua
+      uses: leafo/setup-lua@v1
+      with:
+        luaVersion: "5.4.4"
+
+    - name: Prepare Test Cases
+      run: |
+        # Create test configuration files for each case
+        echo -e "#plugins=\n" > case1.ini
+        echo -e "plugins= bla\n" > case2.ini
+        echo -e "plugins= bla\nplugins= extra\n" > case3.ini
+        echo -e "#another test file\n" > case4.ini
+        echo -e "plugins = ja4plus.so\n" > case5.ini
+
+    - name: Run Configuration Script for Each Case
+      run: |
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case1.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case2.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case3.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case4.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case5.ini
+      shell: bash
+
+    - name: Check Outputs
+      run: |
+        for i in {1..5}; do
+          echo "Case $i Output:"
+          cat rancase_case$i.ini
+        done
+
