@@ -17,24 +17,14 @@ jobs:
       uses: leafo/setup-lua@v1
       with:
         luaVersion: "5.4.4"
-
-    - name: Prepare Test Cases
-      run: |
-      	echo print("testcase running")
-        # Create test configuration files for each case
-        echo -e "#plugins=\n" > case1.ini
-        echo -e "plugins= bla\n" > case2.ini
-        echo -e "plugins= bla\nplugins= extra\n" > case3.ini
-        echo -e "#another test file\n" > case4.ini
-        echo -e "plugins = ja4plus.so\n" > case5.ini
-
     - name: Run Configuration Script for Each Case
       run: |
-        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case1.ini
-        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case2.ini
-        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case3.ini
-        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case4.ini
-        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/config_script.lua case5.ini
+    	echo "running tests" 
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/JA4FindReplacePluginLine.lua case1.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/JA4FindReplacePluginLine.lua case2.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/JA4FindReplacePluginLine.lua case3.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/JA4FindReplacePluginLine.lua case4.ini
+        lua /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/JA4FindReplacePluginLine.lua case5.ini
       shell: bash
 
     - name: Check Outputs
