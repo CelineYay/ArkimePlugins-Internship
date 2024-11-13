@@ -21,7 +21,7 @@ jobs:
           luarocks install \
             --deps-only lua-series-1.1.0-1.rockspec
       - name: test addition lua Function
-        run: luarocks test /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/function_testluaunit.lua
+        run: luarocks test /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/testFunction.lua
         env:
           LUA_INIT: "@src/setup.lua"
 
