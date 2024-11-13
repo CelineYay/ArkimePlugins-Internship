@@ -1,4 +1,3 @@
-#/home/celinechan/Desktop/Repo/ArkimePlugins-Internship/.github/workflows/luarockstest.yml
 name: luaRocks Test
 
 on:
@@ -16,15 +15,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: leafo/gh-actions-lua@v10
       - uses: leafo/gh-actions-luarocks@v4
-      # Runs a set of commands using the runners shell
+      # Runs a set of commands using the runner's shell
       - name: install
         run: |
           luarocks install \
             --deps-only lua-series-1.1.0-1.rockspec
       - name: test addition lua Function
-      	run: luarocks test /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/function_testluaunit.lua
+        run: luarocks test /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/function_testluaunit.lua
         env:
-            LUA_INIT: "@src/setup.lua"
-      	  
-        
-   
+          LUA_INIT: "@src/setup.lua"
+
