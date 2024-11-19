@@ -1,29 +1,34 @@
-name: luaRocks Test
+name: test
 
-on:
-  push:
-    branches: [ "master" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-      - uses: leafo/gh-actions-lua@latest
-      - uses: leafo/gh-actions-luarocks@latest
-      - name: Install LuaUnit
-        run: luarocks install luaunit 3.4
-      # Runs a set of commands using the runner's shell
-      #- name: install
-        #run: |
-          #luarocks install \
-            #--deps-only lua-series-1.1.0-1.rockspec
-      - name: test addition lua Function
-        run: luarocks test /home/celinechan/Desktop/Repo/ArkimePlugins-Internship/testFunction.lua
-        #env:
-          #LUA_INIT: "@src/setup.lua"
 
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: leafo/gh-actions-lua@v9
+      with:
+        luaVersion: "5.1"
+
+    - uses: leafo/gh-actions-luarocks@v4
+
+    - name: linting rockspec
+      run: |
+        luarocks lint lua-dev-1.rockspec
+
+    - name: install dependencies
+      run: |
+        luarocks install --deps-only lua-dev-1.rockspec
+        
+    - name: run main.lua
+      run: |
+        lua -l src/setup src/main.lua
+
+    - name: run test.lua
+      run: luarocks test
+      env:
+        LUA_INIT: "@src/setup.lua"
+        
